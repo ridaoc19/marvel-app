@@ -24,9 +24,7 @@ const NotFound = () => {
 				</Link>
 			</div>
 			<h1 className='not-found__title'>404 - Page Not Found</h1>
-			<p className='not-found__message'>
-				We're sorry, the page you requested is unavailable.
-			</p>
+			<p className='not-found__message'>We're sorry, the page you requested is unavailable.</p>
 			<Button
 				id='not-found__button'
 				className='not-found__button'

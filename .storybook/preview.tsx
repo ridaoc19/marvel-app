@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-	INITIAL_VIEWPORTS,
-	MINIMAL_VIEWPORTS,
-} from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import type { Preview } from '@storybook/react';
 import { StoreContext } from '../src/hooks/useContext/index';
 import '!style-loader!css-loader!sass-loader!../src/styles/app/app.scss';

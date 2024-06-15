@@ -1,9 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { expect, within } from '@storybook/test';
-import {
-	reactRouterParameters,
-	withRouter,
-} from 'storybook-addon-remix-react-router';
+import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 import NotFound from './NotFound';
 import useLanguages from '../../hooks/useLanguages/useLanguages';
 import { Controls, Primary } from '@storybook/blocks';
@@ -38,9 +35,7 @@ export const NotFounds: Story = {
 		const title = canvas.getByText('404 - Page Not Found');
 		expect(title).toBeInTheDocument();
 
-		const message = canvas.getByText(
-			"We're sorry, the page you requested is unavailable.",
-		);
+		const message = canvas.getByText("We're sorry, the page you requested is unavailable.");
 		expect(message).toBeInTheDocument();
 
 		const button = canvas.getByText('home');
@@ -58,8 +53,8 @@ const NotFoundDocumentation = () => {
 				<div>
 					<h1>NotFound</h1>
 					<p>
-						The <code>NotFound</code> component displays a 404 error page when a
-						user navigates to a route that does not exist.
+						The <code>NotFound</code> component displays a 404 error page when a user navigates to a
+						route that does not exist.
 					</p>
 
 					<h3>Props</h3>
@@ -76,58 +71,54 @@ const NotFoundDocumentation = () => {
 					<h3>Additional Notes</h3>
 					<ul>
 						<li>
-							The <code>NotFound</code> component uses the{' '}
-							<code>useContext</code> hook to access and clear the podcast state
-							when navigating back to the home page.
+							The <code>NotFound</code> component uses the <code>useContext</code> hook to access
+							and clear the podcast state when navigating back to the home page.
 						</li>
 						<li>
-							It also uses the <code>useNavigate</code> hook from{' '}
-							<code>react-router-dom</code> to programmatically navigate to the
-							home page.
+							It also uses the <code>useNavigate</code> hook from <code>react-router-dom</code> to
+							programmatically navigate to the home page.
 						</li>
 						<li>
-							The component renders a logo, a title, a message, and a button to
-							return to the home page.
+							The component renders a logo, a title, a message, and a button to return to the home
+							page.
 						</li>
 					</ul>
 
 					<h3>Testing</h3>
 					<p>
-						To ensure the quality and proper functioning of the{' '}
-						<code>NotFound</code> component, the following tests have been
-						included:
+						To ensure the quality and proper functioning of the <code>NotFound</code> component, the
+						following tests have been included:
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización del Logo</strong>: Verifica que el logo se
-							renderice correctamente y que esté presente en el DOM.
+							<strong>Renderización del Logo</strong>: Verifica que el logo se renderice
+							correctamente y que esté presente en el DOM.
 						</li>
 						<li>
-							<strong>Renderización del Título</strong>: Verifica que el título
-							"404 - Page Not Found" se renderice correctamente.
+							<strong>Renderización del Título</strong>: Verifica que el título "404 - Page Not
+							Found" se renderice correctamente.
 						</li>
 						<li>
-							<strong>Renderización del Mensaje</strong>: Verifica que el
-							mensaje "We're sorry, the page you requested is unavailable." se
+							<strong>Renderización del Mensaje</strong>: Verifica que el mensaje "We're sorry, the
+							page you requested is unavailable." se renderice correctamente.
+						</li>
+						<li>
+							<strong>Renderización del Botón</strong>: Verifica que el botón con el texto "home" se
 							renderice correctamente.
-						</li>
-						<li>
-							<strong>Renderización del Botón</strong>: Verifica que el botón
-							con el texto "home" se renderice correctamente.
 						</li>
 					</ul>
 					<p>
-						These tests ensure that the <code>NotFound</code> component renders
-						properly and provides the intended user feedback. You can check
-						these tests in the <code>Interactions</code> section.
+						These tests ensure that the <code>NotFound</code> component renders properly and
+						provides the intended user feedback. You can check these tests in the{' '}
+						<code>Interactions</code> section.
 					</p>
 				</div>
 			) : (
 				<div>
 					<h1>NotFound</h1>
 					<p>
-						El componente <code>NotFound</code> muestra una página de error 404
-						cuando un usuario navega a una ruta que no existe.
+						El componente <code>NotFound</code> muestra una página de error 404 cuando un usuario
+						navega a una ruta que no existe.
 					</p>
 
 					<h3>Props</h3>
@@ -144,18 +135,17 @@ const NotFoundDocumentation = () => {
 					<h3>Notas Adicionales</h3>
 					<ul>
 						<li>
-							El componente <code>NotFound</code> utiliza el hook{' '}
-							<code>useContext</code> para acceder y limpiar el estado del
-							podcast cuando se navega de regreso a la página principal.
+							El componente <code>NotFound</code> utiliza el hook <code>useContext</code> para
+							acceder y limpiar el estado del podcast cuando se navega de regreso a la página
+							principal.
 						</li>
 						<li>
-							También utiliza el hook <code>useNavigate</code> de{' '}
-							<code>react-router-dom</code> para navegar programáticamente a la
+							También utiliza el hook <code>useNavigate</code> de <code>react-router-dom</code> para
+							navegar programáticamente a la página principal.
+						</li>
+						<li>
+							El componente renderiza un logo, un título, un mensaje y un botón para regresar a la
 							página principal.
-						</li>
-						<li>
-							El componente renderiza un logo, un título, un mensaje y un botón
-							para regresar a la página principal.
 						</li>
 					</ul>
 
@@ -166,28 +156,26 @@ const NotFoundDocumentation = () => {
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización del Logo</strong>: Verifica que el logo se
-							renderice correctamente y que esté presente en el DOM.
+							<strong>Renderización del Logo</strong>: Verifica que el logo se renderice
+							correctamente y que esté presente en el DOM.
 						</li>
 						<li>
-							<strong>Renderización del Título</strong>: Verifica que el título
-							"404 - Page Not Found" se renderice correctamente.
+							<strong>Renderización del Título</strong>: Verifica que el título "404 - Page Not
+							Found" se renderice correctamente.
 						</li>
 						<li>
-							<strong>Renderización del Mensaje</strong>: Verifica que el
-							mensaje "We're sorry, the page you requested is unavailable." se
+							<strong>Renderización del Mensaje</strong>: Verifica que el mensaje "We're sorry, the
+							page you requested is unavailable." se renderice correctamente.
+						</li>
+						<li>
+							<strong>Renderización del Botón</strong>: Verifica que el botón con el texto "home" se
 							renderice correctamente.
-						</li>
-						<li>
-							<strong>Renderización del Botón</strong>: Verifica que el botón
-							con el texto "home" se renderice correctamente.
 						</li>
 					</ul>
 					<p>
-						Estas pruebas aseguran que el componente <code>NotFound</code> se
-						renderice adecuadamente y proporcione la retroalimentación de
-						usuario prevista. Puedes verificar estas pruebas en la sección de{' '}
-						<code>Interactions</code>.
+						Estas pruebas aseguran que el componente <code>NotFound</code> se renderice
+						adecuadamente y proporcione la retroalimentación de usuario prevista. Puedes verificar
+						estas pruebas en la sección de <code>Interactions</code>.
 					</p>
 				</div>
 			)}

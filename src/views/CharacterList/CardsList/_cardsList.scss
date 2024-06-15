@@ -1,9 +1,9 @@
 .cards-list {
-	display              : grid;
+	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
-	margin               : 0;
-	padding              : 1rem;
-	list-style           : none;
-	gap                  : 1rem;
-	justify-items        : center;
+	margin: 0;
+	padding: 1rem;
+	list-style: none;
+	gap: 1rem;
+	justify-items: center;
 }

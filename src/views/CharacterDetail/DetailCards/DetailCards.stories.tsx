@@ -51,7 +51,6 @@ export const DetailsCards: Story = {
 	},
 };
 
-
 const DetailCardsDocumentation = () => {
 	const { Switch, language } = useLanguages();
 
@@ -62,13 +61,16 @@ const DetailCardsDocumentation = () => {
 				<div>
 					<h1>DetailCards</h1>
 					<p>
-						The <code>DetailCards</code> component renders a list of comic cards associated with a specific character.
+						The <code>DetailCards</code> component renders a list of comic cards associated with a
+						specific character.
 					</p>
 
 					<h3>Props</h3>
 					<ul>
 						<li>
-							<strong>comics</strong>: An array of comic details. Each comic should have an <code>id</code>, <code>title</code>, <code>modified</code> date, and an <code>image</code> URL.
+							<strong>comics</strong>: An array of comic details. Each comic should have an{' '}
+							<code>id</code>, <code>title</code>, <code>modified</code> date, and an{' '}
+							<code>image</code> URL.
 						</li>
 					</ul>
 
@@ -83,20 +85,24 @@ const DetailCardsDocumentation = () => {
 					<h3>Additional Notes</h3>
 					<ul>
 						<li>
-							The <code>DetailCards</code> component internally uses the <code>DetailCard</code> component to render each comic.
+							The <code>DetailCards</code> component internally uses the <code>DetailCard</code>{' '}
+							component to render each comic.
 						</li>
 					</ul>
 
 					<h3>Testing</h3>
 					<p>
-						To ensure the quality and proper functioning of the <code>DetailCards</code> component, consider the following tests:
+						To ensure the quality and proper functioning of the <code>DetailCards</code> component,
+						consider the following tests:
 					</p>
 					<ul>
 						<li>
-							<strong>Rendering</strong>: Verifies that the component renders correctly with the provided comics data.
+							<strong>Rendering</strong>: Verifies that the component renders correctly with the
+							provided comics data.
 						</li>
 						<li>
-							<strong>Empty State</strong>: Ensures that the component correctly handles the case when no comics are provided.
+							<strong>Empty State</strong>: Ensures that the component correctly handles the case
+							when no comics are provided.
 						</li>
 					</ul>
 				</div>
@@ -104,13 +110,16 @@ const DetailCardsDocumentation = () => {
 				<div>
 					<h1>DetailCards</h1>
 					<p>
-						El componente <code>DetailCards</code> renderiza una lista de tarjetas de cómics asociadas con un personaje específico.
+						El componente <code>DetailCards</code> renderiza una lista de tarjetas de cómics
+						asociadas con un personaje específico.
 					</p>
 
 					<h3>Props</h3>
 					<ul>
 						<li>
-							<strong>comics</strong>: Una matriz de detalles de cómics. Cada cómic debe tener un <code>id</code>, <code>title</code>, fecha de <code>modified</code> y una URL de <code>image</code>.
+							<strong>comics</strong>: Una matriz de detalles de cómics. Cada cómic debe tener un{' '}
+							<code>id</code>, <code>title</code>, fecha de <code>modified</code> y una URL de{' '}
+							<code>image</code>.
 						</li>
 					</ul>
 
@@ -125,20 +134,24 @@ const DetailCardsDocumentation = () => {
 					<h3>Notas Adicionales</h3>
 					<ul>
 						<li>
-							El componente <code>DetailCards</code> utiliza internamente el componente <code>DetailCard</code> para renderizar cada cómic.
+							El componente <code>DetailCards</code> utiliza internamente el componente{' '}
+							<code>DetailCard</code> para renderizar cada cómic.
 						</li>
 					</ul>
 
 					<h3>Pruebas</h3>
 					<p>
-						Para asegurar la calidad y el correcto funcionamiento del componente <code>DetailCards</code>, considera las siguientes pruebas:
+						Para asegurar la calidad y el correcto funcionamiento del componente{' '}
+						<code>DetailCards</code>, considera las siguientes pruebas:
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización</strong>: Verifica que el componente se renderiza correctamente con los datos de cómics proporcionados.
+							<strong>Renderización</strong>: Verifica que el componente se renderiza correctamente
+							con los datos de cómics proporcionados.
 						</li>
 						<li>
-							<strong>Estado Vacío</strong>: Asegura que el componente maneja correctamente el caso cuando no se proporcionan cómics.
+							<strong>Estado Vacío</strong>: Asegura que el componente maneja correctamente el caso
+							cuando no se proporcionan cómics.
 						</li>
 					</ul>
 				</div>

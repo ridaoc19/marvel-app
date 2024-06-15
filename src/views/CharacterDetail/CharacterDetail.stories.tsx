@@ -1,9 +1,6 @@
 import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
-import {
-	reactRouterParameters,
-	withRouter,
-} from 'storybook-addon-remix-react-router';
+import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 import Layout from '../../components/layout/Layout';
 import useLanguages from '../../hooks/useLanguages/useLanguages';
 import CharacterDetail from './CharacterDetail';
@@ -37,9 +34,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const CharacterDetails: Story = {
-};
-
+export const CharacterDetails: Story = {};
 
 const CharacterDetailDocumentation = () => {
 	const { Switch, language } = useLanguages();
@@ -51,7 +46,8 @@ const CharacterDetailDocumentation = () => {
 				<div>
 					<h1>CharacterDetail</h1>
 					<p>
-						The <code>CharacterDetail</code> component displays detailed information about a character, including their summary and related comics.
+						The <code>CharacterDetail</code> component displays detailed information about a
+						character, including their summary and related comics.
 					</p>
 
 					<h3>Props</h3>
@@ -93,26 +89,32 @@ const CharacterDetailDocumentation = () => {
 					<h3>Additional Notes</h3>
 					<ul>
 						<li>
-							The <code>CharacterDetail</code> component uses the <code>useFilterData</code> hook to fetch and filter character data.
+							The <code>CharacterDetail</code> component uses the <code>useFilterData</code> hook to
+							fetch and filter character data.
 						</li>
 						<li>
-							It also uses the <code>StatusWrapper</code> component to handle loading and error states.
+							It also uses the <code>StatusWrapper</code> component to handle loading and error
+							states.
 						</li>
 					</ul>
 
 					<h3>Testing</h3>
 					<p>
-						To ensure the quality and proper functioning of the <code>CharacterDetail</code> component, consider the following tests:
+						To ensure the quality and proper functioning of the <code>CharacterDetail</code>{' '}
+						component, consider the following tests:
 					</p>
 					<ul>
 						<li>
-							<strong>Rendering</strong>: Verifies that the component renders correctly with the provided data.
+							<strong>Rendering</strong>: Verifies that the component renders correctly with the
+							provided data.
 						</li>
 						<li>
-							<strong>Error Handling</strong>: Ensures the component displays an error message when there is an error fetching the data.
+							<strong>Error Handling</strong>: Ensures the component displays an error message when
+							there is an error fetching the data.
 						</li>
 						<li>
-							<strong>Loading State</strong>: Checks that the loading state is displayed correctly while the data is being fetched.
+							<strong>Loading State</strong>: Checks that the loading state is displayed correctly
+							while the data is being fetched.
 						</li>
 					</ul>
 				</div>
@@ -120,7 +122,8 @@ const CharacterDetailDocumentation = () => {
 				<div>
 					<h1>CharacterDetail</h1>
 					<p>
-						El componente <code>CharacterDetail</code> muestra información detallada sobre un personaje, incluyendo su resumen y cómics relacionados.
+						El componente <code>CharacterDetail</code> muestra información detallada sobre un
+						personaje, incluyendo su resumen y cómics relacionados.
 					</p>
 
 					<h3>Props</h3>
@@ -135,7 +138,8 @@ const CharacterDetailDocumentation = () => {
 							<strong>image</strong>: Imagen del personaje.
 						</li>
 						<li>
-							<strong>favorite</strong>: Booleano que indica si el personaje está marcado como favorito.
+							<strong>favorite</strong>: Booleano que indica si el personaje está marcado como
+							favorito.
 						</li>
 						<li>
 							<strong>description</strong>: Descripción del personaje.
@@ -162,26 +166,32 @@ const CharacterDetailDocumentation = () => {
 					<h3>Notas Adicionales</h3>
 					<ul>
 						<li>
-							El componente <code>CharacterDetail</code> utiliza el hook <code>useFilterData</code> para obtener y filtrar los datos del personaje.
+							El componente <code>CharacterDetail</code> utiliza el hook <code>useFilterData</code>{' '}
+							para obtener y filtrar los datos del personaje.
 						</li>
 						<li>
-							También usa el componente <code>StatusWrapper</code> para manejar los estados de carga y error.
+							También usa el componente <code>StatusWrapper</code> para manejar los estados de carga
+							y error.
 						</li>
 					</ul>
 
 					<h3>Pruebas</h3>
 					<p>
-						Para asegurar la calidad y el correcto funcionamiento del componente <code>CharacterDetail</code>, considera las siguientes pruebas:
+						Para asegurar la calidad y el correcto funcionamiento del componente{' '}
+						<code>CharacterDetail</code>, considera las siguientes pruebas:
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización</strong>: Verifica que el componente se renderiza correctamente con los datos proporcionados.
+							<strong>Renderización</strong>: Verifica que el componente se renderiza correctamente
+							con los datos proporcionados.
 						</li>
 						<li>
-							<strong>Manejo de Errores</strong>: Asegura que el componente muestra un mensaje de error cuando hay un problema al obtener los datos.
+							<strong>Manejo de Errores</strong>: Asegura que el componente muestra un mensaje de
+							error cuando hay un problema al obtener los datos.
 						</li>
 						<li>
-							<strong>Estado de Carga</strong>: Comprueba que el estado de carga se muestra correctamente mientras se obtienen los datos.
+							<strong>Estado de Carga</strong>: Comprueba que el estado de carga se muestra
+							correctamente mientras se obtienen los datos.
 						</li>
 					</ul>
 				</div>

@@ -8,11 +8,7 @@ interface StatusWrapperProps {
 	renderError: boolean;
 }
 
-function StatusWrapper({
-	children,
-	isLoading,
-	renderError,
-}: StatusWrapperProps) {
+function StatusWrapper({ children, isLoading, renderError }: StatusWrapperProps) {
 	return (
 		<div className='status-wrapper' data-testid='status-wrapper'>
 			{isLoading ? <Loading /> : renderError ? <NotFound /> : children}
