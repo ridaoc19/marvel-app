@@ -47,7 +47,7 @@ const Button: React.FC<ButtonProps> = (params: ButtonProps) => {
 						type: svgLeft,
 						height: 16,
 						width: 16,
-						color: _color.font['font-brand'],
+						color: _color['--marvel-border'],
 					})}
 				</span>
 			)}
@@ -62,7 +62,7 @@ const Button: React.FC<ButtonProps> = (params: ButtonProps) => {
 						type: svgRight,
 						height: 16,
 						width: 16,
-						color: _color.font['font-brand'],
+						color: _color['--marvel-border'],
 					})}
 				</span>
 			)}
