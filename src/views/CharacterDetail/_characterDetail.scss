@@ -3,20 +3,18 @@
 @import './DetailResume/detailResume';
 
 .character-detail {
-	display: grid;
+	display      : grid;
 	justify-items: center;
-	grid-template-rows: 320px 526.8px;
-	align-self: start;
+	align-self   : start;
 
 	&__resume {
-		width: 100%;
+		width           : 100%;
 		background-color: var(--marvel-black);
 	}
 
 	&__comics {
-		width: 100%;
+		width    : 100%;
 		max-width: 960px;
-		height: 526.8px;
-		padding: 48px 0px 48px 0px;
+		height   : 526.8px;
 	}
 }
