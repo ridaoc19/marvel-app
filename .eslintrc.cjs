@@ -9,12 +9,7 @@ module.exports = {
 		'eslint-config-prettier',
 		'plugin:storybook/recommended',
 	],
-	ignorePatterns: [
-		'dist',
-		'.eslintrc.cjs',
-		'webpack.config.js',
-		'babel.config.js',
-	],
+	ignorePatterns: ['dist', '.eslintrc.cjs', 'webpack.config.js', 'babel.config.js'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 'latest',
@@ -24,9 +19,6 @@ module.exports = {
 	},
 	plugins: ['react-refresh'],
 	rules: {
-		'react-refresh/only-export-components': [
-			'warn',
-			{ allowConstantExport: true },
-		],
+		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 	},
 };

@@ -1,0 +1,9 @@
+@import './CardList/cardList';
+@import './Filter/filter';
+@import './CardsList/cardsList';
+
+.character-list {
+	height: 100%;
+	display: grid;
+	grid-template-rows: min-content 1fr;
+}

@@ -4,8 +4,7 @@ import { CreateContext } from './useContext';
 import { MarvelState } from './useContext/reducer';
 
 function useFilterData(): MarvelState & { totalFavorites: number } {
-	const { marvelState, requestCharacters, requestComic } =
-		useContext(CreateContext);
+	const { marvelState, requestCharacters, requestComic } = useContext(CreateContext);
 	const { characterId } = useParams<{ characterId: string }>();
 
 	useEffect(() => {

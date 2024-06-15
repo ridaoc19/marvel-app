@@ -39,8 +39,8 @@ const LoadingDocumentation = () => {
 				<div>
 					<h1>Loading</h1>
 					<p>
-						The <code>Loading</code> component renders a loading animation to
-						indicate that content is being loaded.
+						The <code>Loading</code> component renders a loading animation to indicate that content
+						is being loaded.
 					</p>
 
 					<h3>Props</h3>
@@ -57,36 +57,34 @@ const LoadingDocumentation = () => {
 					<h3>Additional Notes</h3>
 					<ul>
 						<li>
-							The <code>Loading</code> component is a purely visual component
-							meant to provide feedback to users during data fetching or other
-							asynchronous operations.
+							The <code>Loading</code> component is a purely visual component meant to provide
+							feedback to users during data fetching or other asynchronous operations.
 						</li>
 					</ul>
 
 					<h3>Testing</h3>
 					<p>
-						To ensure the quality and proper functioning of the{' '}
-						<code>Loading</code> component, the following tests have been
-						included:
+						To ensure the quality and proper functioning of the <code>Loading</code> component, the
+						following tests have been included:
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización del Loading</strong>: Verifica que el texto
-							de carga se renderice correctamente.
+							<strong>Renderización del Loading</strong>: Verifica que el texto de carga se
+							renderice correctamente.
 						</li>
 					</ul>
 					<p>
-						These tests ensure that the <code>Loading</code> component renders
-						properly and provides the intended visual feedback. You can check
-						these tests in the <code>Interactions</code> section.
+						These tests ensure that the <code>Loading</code> component renders properly and provides
+						the intended visual feedback. You can check these tests in the <code>Interactions</code>{' '}
+						section.
 					</p>
 				</div>
 			) : (
 				<div>
 					<h1>Loading</h1>
 					<p>
-						El componente <code>Loading</code> muestra una animación de carga
-						para indicar que el contenido se está cargando.
+						El componente <code>Loading</code> muestra una animación de carga para indicar que el
+						contenido se está cargando.
 					</p>
 
 					<h3>Props</h3>
@@ -103,9 +101,9 @@ const LoadingDocumentation = () => {
 					<h3>Notas Adicionales</h3>
 					<ul>
 						<li>
-							El componente <code>Loading</code> es un componente puramente
-							visual destinado a proporcionar retroalimentación a los usuarios
-							durante la obtención de datos u otras operaciones asincrónicas.
+							El componente <code>Loading</code> es un componente puramente visual destinado a
+							proporcionar retroalimentación a los usuarios durante la obtención de datos u otras
+							operaciones asincrónicas.
 						</li>
 					</ul>
 
@@ -116,15 +114,14 @@ const LoadingDocumentation = () => {
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización del Loading</strong>: Verifica que el texto
-							de carga se renderice correctamente.
+							<strong>Renderización del Loading</strong>: Verifica que el texto de carga se
+							renderice correctamente.
 						</li>
 					</ul>
 					<p>
-						Estas pruebas aseguran que el componente <code>Loading</code> se
-						renderice adecuadamente y proporcione la retroalimentación visual
-						prevista. Puedes verificar estas pruebas en la sección de{' '}
-						<code>Interactions</code>.
+						Estas pruebas aseguran que el componente <code>Loading</code> se renderice adecuadamente
+						y proporcione la retroalimentación visual prevista. Puedes verificar estas pruebas en la
+						sección de <code>Interactions</code>.
 					</p>
 				</div>
 			)}

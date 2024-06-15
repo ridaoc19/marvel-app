@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import Navbar from './Navbar/Navbar';
 
-
 function Layout({ children }: { children: ReactNode }) {
 	return (
 		<div className='layout' data-testid='layout'>

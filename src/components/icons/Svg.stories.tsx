@@ -64,8 +64,7 @@ const SvgDocumentation = () => {
 				<div>
 					<h1>Svg</h1>
 					<p>
-						The <code>Svg</code> component renders SVG icons based on the type
-						provided.
+						The <code>Svg</code> component renders SVG icons based on the type provided.
 					</p>
 
 					<h3>Props</h3>
@@ -95,16 +94,16 @@ const SvgDocumentation = () => {
 					<h3>Additional Notes</h3>
 					<ul>
 						<li>
-							The <code>Svg</code> component renders SVG icons based on the type
-							provided in the props.
+							The <code>Svg</code> component renders SVG icons based on the type provided in the
+							props.
 						</li>
 						<li>
-							The default width and height of the SVG icon are both set to 24
-							unless specified otherwise.
+							The default width and height of the SVG icon are both set to 24 unless specified
+							otherwise.
 						</li>
 						<li>
-							The default color of the SVG icon is set to the brand font color
-							unless specified otherwise.
+							The default color of the SVG icon is set to the brand font color unless specified
+							otherwise.
 						</li>
 					</ul>
 				</div>
@@ -112,15 +111,13 @@ const SvgDocumentation = () => {
 				<div>
 					<h1>Svg</h1>
 					<p>
-						El componente <code>Svg</code> renderiza íconos SVG basados en el
-						tipo proporcionado.
+						El componente <code>Svg</code> renderiza íconos SVG basados en el tipo proporcionado.
 					</p>
 
 					<h3>Props</h3>
 					<ul>
 						<li>
-							<strong>type</strong>: El tipo de ícono SVG que se va a
-							renderizar.
+							<strong>type</strong>: El tipo de ícono SVG que se va a renderizar.
 						</li>
 						<li>
 							<strong>width</strong>: El ancho del ícono SVG. (Opcional)
@@ -142,16 +139,16 @@ const SvgDocumentation = () => {
 					<h3>Notas Adicionales</h3>
 					<ul>
 						<li>
-							El componente <code>Svg</code> renderiza íconos SVG basados en el
-							tipo proporcionado en las props.
+							El componente <code>Svg</code> renderiza íconos SVG basados en el tipo proporcionado
+							en las props.
 						</li>
 						<li>
-							El ancho y la altura predeterminados del ícono SVG están
-							establecidos en 24 a menos que se especifique lo contrario.
+							El ancho y la altura predeterminados del ícono SVG están establecidos en 24 a menos
+							que se especifique lo contrario.
 						</li>
 						<li>
-							El color predeterminado del ícono SVG está establecido en el color
-							de fuente de la marca a menos que se especifique lo contrario.
+							El color predeterminado del ícono SVG está establecido en el color de fuente de la
+							marca a menos que se especifique lo contrario.
 						</li>
 					</ul>
 				</div>
