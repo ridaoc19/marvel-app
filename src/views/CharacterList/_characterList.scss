@@ -3,7 +3,8 @@
 @import './CardsList/cardsList';
 
 .character-list {
-	height: 100%;
-	display: grid;
+	height            : 100%;
+	display           : grid;
 	grid-template-rows: min-content 1fr;
+
 }
