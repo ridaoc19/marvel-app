@@ -1,0 +1,35 @@
+.detail-cards {
+	display : grid;
+	overflow: hidden;
+
+	&__title {
+		>h2 {
+			font-family: Roboto Condensed;
+			font-size  : 32px;
+			font-weight: 700;
+			line-height: 37.5px;
+			text-align : left;
+			color      : var(--marvel-black);
+		}
+	}
+
+	&__cards {
+		display   : flex;
+		gap       : 16px;
+		overflow-x: auto;
+
+
+		&::-webkit-scrollbar {
+			height: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: red;
+			border-radius   : 16px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #D9D9D9;
+		}
+	}
+}

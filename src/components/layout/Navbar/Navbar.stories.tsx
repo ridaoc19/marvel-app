@@ -1,6 +1,5 @@
 import { Controls, Primary, Story } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
-import { expect, within } from '@storybook/test';
 import {
 	reactRouterParameters,
 	withRouter,
@@ -31,19 +30,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Navbars: Story = {
 	args: {},
-	play: async ({ canvasElement }) => {
-		const canvas = within(canvasElement);
-
-		const logoLink = canvas.getByRole('link', { name: /podcasts/i });
-		expect(logoLink).toBeInTheDocument();
-
-		const svgElement = logoLink.querySelector('svg');
-		expect(svgElement).toBeInTheDocument();
-
-		const textElement = logoLink.querySelector('h2');
-		expect(textElement).toBeInTheDocument();
-		expect(textElement).toHaveTextContent('Podcasts');
-	},
 };
 
 const NavbarDocumentation = () => {

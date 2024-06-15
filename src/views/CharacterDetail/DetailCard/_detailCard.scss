@@ -1,0 +1,41 @@
+.detail-card {
+	width             : 179.2px;
+	height            : 340.8px;
+	gap               : 12px;
+	display           : grid;
+	grid-template-rows: 268.8px 1fr;
+
+	&__image {
+		width : 179.2px;
+		height: 268.8px;
+
+		>img {
+			width : 100%;
+			height: 100%;
+		}
+	}
+
+
+	&__info {
+		height         : 100%;
+		display        : flex;
+		flex-direction : column;
+		justify-content: space-between;
+		color          : var(--marvel-black);
+
+		>h4 {
+			margin            : 0;
+			display           : -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow          : hidden;
+			text-overflow     : ellipsis;
+			white-space       : normal;
+		}
+
+		>p {
+			margin: 0;
+		}
+
+	}
+}

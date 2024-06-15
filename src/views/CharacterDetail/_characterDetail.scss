@@ -1,0 +1,23 @@
+@import './DetailCard/detailCard';
+@import './DetailCards/detailCards';
+@import './DetailResume/detailResume';
+
+
+.character-detail {
+  display           : grid;
+  justify-items     : center;
+  grid-template-rows: 320px 526.8px;
+  align-self        : start;
+
+  &__resume {
+    width           : 100%;
+    background-color: var(--marvel-black);
+  }
+
+  &__comics {
+    width    : 100%;
+    max-width: 960px;
+    height   : 526.8px;
+    padding  : 48px 0px 48px 0px;
+  }
+}
