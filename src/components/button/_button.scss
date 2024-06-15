@@ -1,0 +1,87 @@
+@mixin button_repeat($type) {
+	width          : 100%;
+	display        : flex;
+	justify-content: space-between;
+	gap            : 0.3rem;
+	min-height     : 2.5rem;
+	cursor         : pointer;
+	user-select    : none;
+	border-radius  : 0.4rem;
+	outline        : none;
+	align-items    : center;
+	position       : relative;
+	transition     :
+		background-color 0.3s,
+		color 0.3s,
+		transform 0.3s;
+
+	.button__text-container {
+		margin: auto;
+	}
+
+	span,
+	div {
+		pointer-events: none;
+		margin        : 0;
+		padding       : 0;
+	}
+
+	@if $type==button_dark {
+		background-color: var(--marvel-black);
+		color           : var(--marvel-red);
+		border          : 1px solid var(--marvel-red);
+
+		&:hover {
+			background-color: var(--marvel-red);
+			color           : var(--marvel-white);
+			transform       : scale(1);
+		}
+
+		&:active {
+			transform: scale(0.99);
+		}
+
+		&:disabled {
+			background-color: var(--neutral-1);
+			color           : var(--neutral-4);
+			cursor          : not-allowed;
+			border          : 1px solid var(--neutral-5);
+		}
+	}
+
+	@else if $type==button_light {
+		background-color: var(--marvel-white);
+		color           : var(--marvel-red);
+		border          : 1px solid var(--marvel-red);
+
+		&:hover {
+			background-color: var(--marvel-black);
+			transform       : scale(1);
+		}
+
+		&:active {
+			transform: scale(0.99);
+		}
+
+		&:disabled {
+			background-color: var(--neutral-1);
+			color           : var(--neutral-4);
+			cursor          : not-allowed;
+		}
+	}
+}
+
+.button {
+	button {
+		all        : unset;
+		line-height: 0;
+	}
+
+	&.button_dark {
+		@include button_repeat(button_dark);
+	}
+
+	&.button_light {
+		@include button_repeat(button_light);
+	}
+}
