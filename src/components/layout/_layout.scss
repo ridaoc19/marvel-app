@@ -1,17 +1,26 @@
 @import './Navbar/navbar';
 
 .layout {
-	min-height: 100vh;
-	max-width: 100vw;
-	display: grid;
+	min-height        : 100vh;
+	max-width         : 100vw;
+	display           : grid;
 	grid-template-rows: min-content 1fr;
 
+	&.favorites {
+		grid-template-rows: min-content min-content 1fr;
+	}
+
+	&__favorites {
+		color  : var(--marvel-black);
+		padding: 1rem 1rem 0;
+	}
+
 	&__children {
-		height: 100%;
-		width: 100%;
-		max-width: 100vw;
-		margin: 0 auto;
-		display: grid;
+		height          : 100%;
+		width           : 100%;
+		max-width       : 100vw;
+		margin          : 0 auto;
+		display         : grid;
 		// align-content: start;
 
 		@media (min-width: 1300px) {
