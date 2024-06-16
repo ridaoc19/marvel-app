@@ -22,6 +22,7 @@ function CharacterDetail() {
 						favorite={favorite}
 						description={description}
 					/>
+					<div className='character-detail__resume-cut'></div>
 				</div>
 				<div className='character-detail__comics'>
 					<DetailCards comics={comics} />
