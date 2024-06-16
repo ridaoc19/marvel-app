@@ -2,7 +2,7 @@ import DetailCard from '../DetailCard/DetailCard';
 
 function DetailCards({ comics }: { comics: ComicDetail['comics'] }) {
 	return (
-		<div className='detail-cards'>
+		<div className='detail-cards' data-testId='detail-cards'>
 			<div className='detail-cards__title'>
 				<h2>COMICS</h2>
 			</div>

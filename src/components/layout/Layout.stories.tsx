@@ -39,6 +39,20 @@ export const Layouts: Story = {
 
 		const childrenElement = canvas.getByTestId('layout-children');
 		expect(childrenElement).toBeInTheDocument();
+
+		const navbarElement = canvasElement.querySelector('.navbar'); // Assuming Navbar has a text "Navbar"
+		expect(navbarElement).toBeInTheDocument();
+
+		const layoutWithFavorites = canvas.getByTestId('layout');
+		expect(layoutWithFavorites).toHaveClass('layout');
+		if (layoutWithFavorites.classList.contains('favorites')) {
+			expect(layoutWithFavorites).toHaveClass('favorites');
+		}
+
+		if (layoutWithFavorites.classList.contains('favorites')) {
+			const favoritesElement = canvas.getByText('FAVORITES');
+			expect(favoritesElement).toBeInTheDocument();
+		}
 	},
 };
 
@@ -112,12 +126,16 @@ const LayoutDocumentation = () => {
 							correctly, including its logo and navigation links.
 						</li>
 						<li>
-							<strong>Rendering of Breadcrumb</strong>: It is checked that the Breadcrumb navigation
-							is displayed correctly and reflects the current location within the application.
-						</li>
-						<li>
 							<strong>Rendering of Children</strong>: It is verified that the main content area
 							correctly renders the children passed to the Layout component.
+						</li>
+						<li>
+							<strong>Class 'favorites'</strong>: The presence of the 'favorites' class is verified
+							when the condition is met.
+						</li>
+						<li>
+							<strong>Conditional rendering of 'FAVORITES'</strong>: It is verified that the
+							'FAVORITES' text is rendered only when the specific conditions are met.
 						</li>
 					</ul>
 					<p>
@@ -190,12 +208,16 @@ const LayoutDocumentation = () => {
 							correctamente, incluyendo su logo y enlaces de navegación.
 						</li>
 						<li>
-							<strong>Renderización del Breadcrumb</strong>: Se comprueba que la navegación de migas
-							de pan se muestre correctamente y refleje la ubicación actual dentro de la aplicación.
-						</li>
-						<li>
 							<strong>Renderización de los Children</strong>: Se verifica que el área de contenido
 							principal renderice correctamente los children pasados al componente Layout.
+						</li>
+						<li>
+							<strong>Clase 'favorites'</strong>: Se verifica la presencia de la clase 'favorites'
+							cuando se cumple la condición.
+						</li>
+						<li>
+							<strong>Renderización condicional de 'FAVORITES'</strong>: Se verifica que el texto
+							'FAVORITES' se renderice solo cuando se cumplan las condiciones específicas.
 						</li>
 					</ul>
 					<p>

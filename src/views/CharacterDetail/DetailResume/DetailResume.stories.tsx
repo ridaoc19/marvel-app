@@ -110,26 +110,6 @@ const DetailResumeDocumentation = () => {
 							toggle the favorite status of the character.
 						</li>
 					</ul>
-
-					<h3>Testing</h3>
-					<p>
-						To ensure the quality and proper functioning of the <code>DetailResume</code> component,
-						consider the following tests:
-					</p>
-					<ul>
-						<li>
-							<strong>Rendering</strong>: Verifies that the component renders correctly with the
-							provided data.
-						</li>
-						<li>
-							<strong>Toggle Favorite</strong>: Ensures the favorite button correctly toggles the
-							favorite status.
-						</li>
-						<li>
-							<strong>Mouse Events</strong>: Checks that mouse events (e.g., hover) function
-							correctly.
-						</li>
-					</ul>
 				</div>
 			) : (
 				<div>
@@ -172,26 +152,6 @@ const DetailResumeDocumentation = () => {
 						<li>
 							El componente <code>DetailResume</code> utiliza el hook <code>useContext</code> para
 							alternar el estado de favorito del personaje.
-						</li>
-					</ul>
-
-					<h3>Pruebas</h3>
-					<p>
-						Para asegurar la calidad y el correcto funcionamiento del componente{' '}
-						<code>DetailResume</code>, considera las siguientes pruebas:
-					</p>
-					<ul>
-						<li>
-							<strong>Renderización</strong>: Verifica que el componente se renderiza correctamente
-							con los datos proporcionados.
-						</li>
-						<li>
-							<strong>Alternar Favorito</strong>: Asegura que el botón de favorito alterna
-							correctamente el estado de favorito.
-						</li>
-						<li>
-							<strong>Eventos del Ratón</strong>: Comprueba que los eventos del ratón (por ejemplo,
-							hover) funcionan correctamente.
 						</li>
 					</ul>
 				</div>

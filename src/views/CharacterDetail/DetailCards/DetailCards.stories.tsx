@@ -2,6 +2,7 @@ import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
 import DetailCards from './DetailCards';
+import { expect, within } from '@storybook/test';
 
 const comics = [
 	{
@@ -48,6 +49,18 @@ type Story = StoryObj<typeof meta>;
 export const DetailsCards: Story = {
 	args: {
 		comics,
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		const detailCardsComponent = canvas.getByTestId('detail-cards');
+		expect(detailCardsComponent).toBeInTheDocument();
+
+		const mainCards = canvas.getByTestId('main-cards');
+		expect(mainCards).toBeInTheDocument();
+
+		const comicCards = mainCards.querySelectorAll('.detail-card');
+		expect(comicCards.length).toBe(comics.length);
 	},
 };
 

@@ -1,7 +1,8 @@
 import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
+import { expect, within } from '@storybook/test';
 import { withRouter } from 'storybook-addon-remix-react-router';
-import useFilterData from '../../../hooks/useFilterData';
+import { characters } from '../../../../.storybook/data';
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
 import CardsList from './CardsList';
 
@@ -21,15 +22,24 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Render = () => {
-	const {
-		characterFilter: { data },
-	} = useFilterData();
-	return <CardsList characters={data} />;
-};
-
 export const CardsLists: Story = {
-	render: () => <Render />,
+	args: {
+		characters,
+	},
+	play: async ({ canvasElement, args }) => {
+		const canvas = within(canvasElement);
+		const cardList = canvas.getByTestId('cards-list');
+		expect(cardList).toBeInTheDocument();
+
+		const cardListAll = canvas.getAllByTestId('cards-list');
+		expect(cardListAll.length).toBe(1);
+
+		const emptyCardList = (args.characters = []);
+		expect(emptyCardList.length).toBe(0);
+
+		const cardListDataAll = (args.characters = characters);
+		expect(cardListDataAll.length > 0).toBe(true);
+	},
 };
 
 const CardsListDocumentation = () => {

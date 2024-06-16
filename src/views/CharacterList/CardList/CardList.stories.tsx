@@ -1,5 +1,6 @@
 import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
+import { expect, within } from '@storybook/test';
 import { withRouter } from 'storybook-addon-remix-react-router';
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
 import CardList from './CardList';
@@ -28,8 +29,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Info: Story = {
+export const CardsList: Story = {
 	args: character,
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		const cardList = canvasElement.querySelector('.card-list');
+		expect(cardList).toBeInTheDocument();
+
+		const favoriteButton = canvas.getByRole('button');
+		expect(favoriteButton).toBeInTheDocument();
+
+		expect(cardList).toHaveClass('card-list');
+	},
 };
 
 const CardListDocumentation = () => {

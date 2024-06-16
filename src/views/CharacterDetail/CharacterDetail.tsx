@@ -11,7 +11,7 @@ function CharacterDetail() {
 	} = useFilterData();
 	return (
 		<StatusWrapper isLoading={isLoading} renderError={isError}>
-			<div className='character-detail'>
+			<div className='character-detail' data-testId='character-detail'>
 				<div className='character-detail__resume'>
 					<DetailResume
 						id={id}

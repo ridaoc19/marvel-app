@@ -1,6 +1,6 @@
 function DetailCard({ image, title, modified }: Omit<Comic, 'id'>) {
 	return (
-		<div className='detail-card'>
+		<div className='detail-card' data-testId='detail-card'>
 			<div className='detail-card__image'>
 				<img src={image} alt={title} />
 			</div>

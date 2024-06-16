@@ -2,6 +2,7 @@ import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
 import DetailCard from './DetailCard';
+import { expect, within } from '@storybook/test';
 
 const comic = {
 	id: 47176,
@@ -28,6 +29,18 @@ type Story = StoryObj<typeof meta>;
 
 export const DetailsCard: Story = {
 	args: comic,
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		const detailCardComponent = canvas.getByTestId('detail-card');
+		expect(detailCardComponent).toBeInTheDocument();
+
+		const titleElement = canvas.getByText(/Free Comic Book Day 2013 1 \(2013\) #1/i);
+		expect(titleElement).toBeInTheDocument();
+
+		const yearElement = canvas.getByText(/2019/);
+		expect(yearElement).toBeInTheDocument();
+	},
 };
 
 const DetailCardDocumentation = () => {
