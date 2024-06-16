@@ -1,24 +1,19 @@
 import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
-import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
+import { withRouter } from 'storybook-addon-remix-react-router';
+import useFilterData from '../../../hooks/useFilterData';
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
-import MainCards from './CardsList';
+import CardsList from './CardsList';
 
-const meta: Meta<typeof MainCards> = {
+const meta: Meta<typeof CardsList> = {
 	title: 'views/CharacterList/CardsList',
-	component: MainCards,
+	component: CardsList,
 	tags: ['autodocs'],
 	decorators: [withRouter],
 	parameters: {
 		docs: {
 			page: () => <CardsListDocumentation />,
 		},
-		reactRouter: reactRouterParameters({
-			location: {
-				pathParams: { characterId: '42' },
-			},
-			routing: { path: '/character/:characterId' },
-		}),
 	},
 };
 
@@ -26,10 +21,15 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Cards: Story = {
-	args: {
-		characters: [],
-	},
+const Render = () => {
+	const {
+		characterFilter: { data },
+	} = useFilterData();
+	return <CardsList characters={data} />;
+};
+
+export const CardsLists: Story = {
+	render: () => <Render />,
 };
 
 const CardsListDocumentation = () => {

@@ -23,7 +23,7 @@ const meta: Meta<typeof CharacterDetail> = {
 		},
 		reactRouter: reactRouterParameters({
 			location: {
-				pathParams: { characterId: 1017100 },
+				pathParams: { characterId: 1010354 },
 			},
 			routing: { path: '/character/:characterId' },
 		}),

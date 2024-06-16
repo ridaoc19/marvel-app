@@ -1,8 +1,11 @@
 import { ReactNode, useContext } from 'react';
-import Navbar from './Navbar/Navbar';
+import { useLocation } from 'react-router-dom';
 import { CreateContext } from '../../hooks/useContext';
+import Navbar from './Navbar/Navbar';
 
 function Layout({ children }: { children: ReactNode }) {
+	const { pathname } = useLocation();
+
 	const {
 		marvelState: {
 			characterFilter: { type },
@@ -13,7 +16,7 @@ function Layout({ children }: { children: ReactNode }) {
 			<div className='layout__navbar'>
 				<Navbar />
 			</div>
-			{type === 'favorites' && (
+			{type === 'favorites' && pathname === '/' && (
 				<div className='layout__favorites'>
 					<h2>FAVORITES</h2>
 				</div>
