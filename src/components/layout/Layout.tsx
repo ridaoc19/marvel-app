@@ -21,9 +21,11 @@ function Layout({ children }: { children: ReactNode }) {
 					<h2>FAVORITES</h2>
 				</div>
 			)}
-			{children && <div className='layout__children' data-testid='layout-children'>
-				{children}
-			</div>}
+			{children && (
+				<div className='layout__children' data-testid='layout-children'>
+					{children}
+				</div>
+			)}
 		</div>
 	);
 }

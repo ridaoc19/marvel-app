@@ -1,11 +1,11 @@
 .switch {
-	display              : grid;
+	display: grid;
 	grid-template-columns: repeat(2, 6rem);
-	justify-content      : end;
-	gap                  : 0.5rem;
-	padding              : 0 0 1rem;
+	justify-content: end;
+	gap: 0.5rem;
+	padding: 0 0 1rem;
 
-	>.button {
+	> .button {
 		width: 4rem;
 	}
 }

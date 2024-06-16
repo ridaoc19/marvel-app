@@ -40,7 +40,7 @@ export const Layouts: Story = {
 		const childrenElement = canvas.getByTestId('layout-children');
 		expect(childrenElement).toBeInTheDocument();
 
-		const navbarElement = canvasElement.querySelector('.navbar'); // Assuming Navbar has a text "Navbar"
+		const navbarElement = canvasElement.querySelector('.navbar');
 		expect(navbarElement).toBeInTheDocument();
 
 		const layoutWithFavorites = canvas.getByTestId('layout');

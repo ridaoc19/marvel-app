@@ -23,7 +23,7 @@ function Navbar() {
 					setFavorite(!favorite);
 				}}
 			>
-				<div data-testId='svg-logo'>
+				<div data-testid='svg-logo'>
 					<Svg type={SvgType.Logo} />
 				</div>
 			</Link>
@@ -34,7 +34,7 @@ function Navbar() {
 					setFavorite(!favorite);
 				}}
 			>
-				<div data-testId='svg-favorites'>
+				<div data-testid='svg-favorites'>
 					<Svg
 						type={
 							character.length === characterFilter.data.length ||

@@ -6,8 +6,10 @@ import Button from '../button/Button';
 import { ButtonType } from '../button/button.type';
 import Svg from '../icons/Svg';
 import { SvgType } from '../icons/svgType';
+import useUpdateTitle from '../../hooks/useUpdateTitle';
 
 const NotFound = () => {
+	useUpdateTitle({ title: 'Marvel - 404 Page Not Found' });
 	const { marvelDispatch } = useContext(CreateContext);
 	const navigate = useNavigate();
 
