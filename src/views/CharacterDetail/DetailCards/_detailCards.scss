@@ -1,22 +1,22 @@
 .detail-cards {
-	display : grid;
+	display: grid;
 	overflow: hidden;
-	padding : 1rem;
+	padding: 1rem;
 
 	&__title {
-		>h2 {
+		> h2 {
 			font-family: Roboto Condensed;
-			font-size  : 32px;
+			font-size: 32px;
 			font-weight: 700;
 			line-height: 37.5px;
-			text-align : left;
-			color      : var(--marvel-black);
+			text-align: left;
+			color: var(--marvel-black);
 		}
 	}
 
 	&__cards {
-		display   : flex;
-		gap       : 16px;
+		display: flex;
+		gap: 16px;
 		overflow-x: auto;
 
 		&::-webkit-scrollbar {
@@ -25,7 +25,7 @@
 
 		&::-webkit-scrollbar-thumb {
 			background-color: red;
-			border-radius   : 16px;
+			border-radius: 16px;
 		}
 
 		&::-webkit-scrollbar-track {

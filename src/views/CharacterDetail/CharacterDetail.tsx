@@ -1,5 +1,6 @@
 import StatusWrapper from '../../components/StatusWrapper/StatusWrapper';
 import useFilterData from '../../hooks/useFilterData';
+import useUpdateTitle from '../../hooks/useUpdateTitle';
 import DetailCards from './DetailCards/DetailCards';
 import DetailResume from './DetailResume/DetailResume';
 
@@ -9,9 +10,10 @@ function CharacterDetail() {
 		isError,
 		isLoading,
 	} = useFilterData();
+	useUpdateTitle({ title: `Marvel ${name && `- ${name}`}` });
 	return (
 		<StatusWrapper isLoading={isLoading} renderError={isError}>
-			<div className='character-detail'>
+			<div className='character-detail' data-testid='character-detail'>
 				<div className='character-detail__resume'>
 					<DetailResume
 						id={id}

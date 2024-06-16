@@ -1,24 +1,20 @@
 import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
-import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
+import { expect, within } from '@storybook/test';
+import { withRouter } from 'storybook-addon-remix-react-router';
+import { characters } from '../../../../.storybook/data';
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
-import MainCards from './CardsList';
+import CardsList from './CardsList';
 
-const meta: Meta<typeof MainCards> = {
+const meta: Meta<typeof CardsList> = {
 	title: 'views/CharacterList/CardsList',
-	component: MainCards,
+	component: CardsList,
 	tags: ['autodocs'],
 	decorators: [withRouter],
 	parameters: {
 		docs: {
 			page: () => <CardsListDocumentation />,
 		},
-		reactRouter: reactRouterParameters({
-			location: {
-				pathParams: { characterId: '42' },
-			},
-			routing: { path: '/character/:characterId' },
-		}),
 	},
 };
 
@@ -26,9 +22,23 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Cards: Story = {
+export const CardsLists: Story = {
 	args: {
-		characters: [],
+		characters,
+	},
+	play: async ({ canvasElement, args }) => {
+		const canvas = within(canvasElement);
+		const cardList = canvas.getByTestId('cards-list');
+		expect(cardList).toBeInTheDocument();
+
+		const cardListAll = canvas.getAllByTestId('cards-list');
+		expect(cardListAll.length).toBe(1);
+
+		const emptyCardList = (args.characters = []);
+		expect(emptyCardList.length).toBe(0);
+
+		const cardListDataAll = (args.characters = characters);
+		expect(cardListDataAll.length > 0).toBe(true);
 	},
 };
 

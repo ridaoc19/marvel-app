@@ -38,12 +38,12 @@ export const Filters: Story = {
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
-		await expect(canvas.getByText('50')).toBeInTheDocument();
 
-		const input = canvas.getByRole('textbox');
+		const filterInput = canvas.getByPlaceholderText('SEARCH A CHARACTER...');
+		expect(filterInput).toBeInTheDocument();
 
-		await userEvent.clear(input);
-		// await userEvent.type(input, 'new filter');
+		await userEvent.type(filterInput, 'Spiderman');
+		expect(filterInput).toHaveValue('Spiderman');
 	},
 };
 
@@ -57,26 +57,12 @@ const FilterDocumentation = () => {
 				<div>
 					<h1>Filter</h1>
 					<p>
-						The <code>Filter</code> component is used for filtering podcasts in the{' '}
-						<code>PodcastList</code> view. It consists of an input field where users can enter
+						The <code>Filter</code> component is used for filtering characters in the{' '}
+						<code>CharacterList</code> view. It consists of an input field where users can enter
 						filter criteria.
 					</p>
 
-					<h3>Props</h3>
-					<ul>
-						<li>
-							<strong>podcastTotal</strong>: The total number of podcasts being displayed.
-						</li>
-						<li>
-							<strong>value</strong>: The value of the input field, representing the current filter
-							criteria.
-						</li>
-						<li>
-							<strong>handleOnChange</strong>: A function to handle changes in the input field.
-						</li>
-					</ul>
-
-					<h3>Example Usage</h3>
+					<h3>Usage</h3>
 					<pre>
 						<code>
 							<Primary />
@@ -91,12 +77,11 @@ const FilterDocumentation = () => {
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización del Contador</strong>: Verifica que el contador de podcasts se
-							renderice correctamente y muestre el número total de podcasts.
+							<strong>Rendering</strong>: Verifies that the input field renders correctly.
 						</li>
 						<li>
-							<strong>Filtro de Podcasts</strong>: Verifica que el campo de entrada funcione
-							correctamente y actualice el valor del filtro según la entrada del usuario.
+							<strong>Filtering</strong>: Verifies that the input field updates the filter value
+							correctly based on user input.
 						</li>
 					</ul>
 					<p>
@@ -109,27 +94,12 @@ const FilterDocumentation = () => {
 				<div>
 					<h1>Filter</h1>
 					<p>
-						El componente <code>Filter</code> se utiliza para filtrar podcasts en la vista{' '}
-						<code>PodcastList</code>. Consiste en un campo de entrada donde los usuarios pueden
+						El componente <code>Filter</code> se utiliza para filtrar personajes en la vista{' '}
+						<code>CharacterList</code>. Consiste en un campo de entrada donde los usuarios pueden
 						ingresar criterios de filtro.
 					</p>
 
-					<h3>Props</h3>
-					<ul>
-						<li>
-							<strong>podcastTotal</strong>: El número total de podcasts que se están mostrando.
-						</li>
-						<li>
-							<strong>value</strong>: El valor del campo de entrada, que representa los criterios de
-							filtro actuales.
-						</li>
-						<li>
-							<strong>handleOnChange</strong>: Una función para manejar los cambios en el campo de
-							entrada.
-						</li>
-					</ul>
-
-					<h3>Ejemplo de Uso</h3>
+					<h3>Uso</h3>
 					<pre>
 						<code>
 							<Primary />
@@ -144,12 +114,12 @@ const FilterDocumentation = () => {
 					</p>
 					<ul>
 						<li>
-							<strong>Renderización del Contador</strong>: Verifica que el contador de podcasts se
-							renderice correctamente y muestre el número total de podcasts.
+							<strong>Renderización</strong>: Verifica que el campo de entrada se renderice
+							correctamente.
 						</li>
 						<li>
-							<strong>Filtro de Podcasts</strong>: Verifica que el campo de entrada funcione
-							correctamente y actualice el valor del filtro según la entrada del usuario.
+							<strong>Filtrado</strong>: Verifica que el campo de entrada actualice correctamente el
+							valor del filtro según la entrada del usuario.
 						</li>
 					</ul>
 					<p>

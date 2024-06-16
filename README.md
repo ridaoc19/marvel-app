@@ -1,4 +1,4 @@
-# ![Icono](./src/assets/icon.svg) ZARA WEB CHALLENGE
+# ![Icono](./src/assets/icon.svg) Marvel App
 
 ## ⚠️ **Importante**
 
@@ -11,7 +11,7 @@
 > Tanto la aplicación como las historias y documentación de componentes se encuentran desplegadas en AWS en el servicio Lightsail. Puede ver:
 >
 > - **Historias (StoryBook):** [https://files.ridaoc.es/](https://files.ridaoc.es/)
-> - **Aplicación Podcast App:** [https://server.ridaoc.es/](https://server.ridaoc.es/)
+> - **Aplicación Marvel App:** [https://server.ridaoc.es/](https://server.ridaoc.es/)
 
 > **Tutorial:**
 >
@@ -32,7 +32,7 @@ Este proyecto consiste en la creación de una pequeña aplicación para obtener 
   - Mostrará un listado de 50 personajes o el resultado de los personajes introducidos en el buscador.
   - Al hacer clic en el icono superior de favoritos, se deberán mostrar los personajes favoritos almacenados.
 
-  ![Vista Principal](#) <!-- Insertar imagen de Figma para Vista Principal -->
+  ![Vista Principal](./src/assets/character-list.png)
 
 #### Funcionalidad
 
@@ -50,7 +50,7 @@ Este proyecto consiste en la creación de una pequeña aplicación para obtener 
 
   - Mostrará información relativa al personaje y los cómics en los que aparece.
 
-  ![Detalle de personaje](#) <!-- Insertar imagen de Figma para Detalle de personaje -->
+  ![Detalle de personaje](./src/assets/character-detail.png)
 
 #### Funcionalidad
 
@@ -125,7 +125,9 @@ npm run storybook
 npm run test-storybook
 ```
 
-![test](./src/assets/image%204.png)
+![test](./src/assets/test.png)
+
+![test](./src/assets/storybook-test.png)
 
 ### Pruebas, Validación y herramientas
 
@@ -145,7 +147,7 @@ npm run format
 - **Consola**: La aplicación debe estar libre de errores en la consola del navegador.
 - **Storybook**: [Storybook](https://storybook.js.org/) es herramienta de desarrollo el cual me ayudo a desarrollar componentes de forma independiente y a documentarlos.
 
-![storybook principal](./src/assets/image.png)
+![storybook principal](./src/assets/storybook-doc.png)
 
 Este proyecto fue desarrollado por **Ricardo David Ocampo**.
 

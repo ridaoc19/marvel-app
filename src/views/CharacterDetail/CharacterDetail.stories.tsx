@@ -4,6 +4,7 @@ import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-r
 import Layout from '../../components/layout/Layout';
 import useLanguages from '../../hooks/useLanguages/useLanguages';
 import CharacterDetail from './CharacterDetail';
+import { expect, within } from '@storybook/test';
 
 const meta: Meta<typeof CharacterDetail> = {
 	title: 'views/CharacterDetail',
@@ -23,7 +24,7 @@ const meta: Meta<typeof CharacterDetail> = {
 		},
 		reactRouter: reactRouterParameters({
 			location: {
-				pathParams: { characterId: 1017100 },
+				pathParams: { characterId: 1010354 },
 			},
 			routing: { path: '/character/:characterId' },
 		}),
@@ -34,7 +35,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const CharacterDetails: Story = {};
+export const CharacterDetails: Story = {
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		const characterDetail = canvas.getByTestId('character-detail');
+		expect(characterDetail).toBeInTheDocument();
+
+		const errorComponent = canvas.getByTestId('status-wrapper');
+		expect(errorComponent).toBeInTheDocument();
+
+		const renderComics = canvas.getByTestId('detail-cards');
+		expect(canvas.getByText('COMICS')).toBeInTheDocument();
+		expect(renderComics).toBeInTheDocument();
+	},
+};
 
 const CharacterDetailDocumentation = () => {
 	const { Switch, language } = useLanguages();
@@ -50,33 +65,11 @@ const CharacterDetailDocumentation = () => {
 						character, including their summary and related comics.
 					</p>
 
-					<h3>Props</h3>
-					<ul>
-						<li>
-							<strong>comics</strong>: List of comics related to the character.
-						</li>
-						<li>
-							<strong>name</strong>: Name of the character.
-						</li>
-						<li>
-							<strong>image</strong>: Image of the character.
-						</li>
-						<li>
-							<strong>favorite</strong>: Boolean indicating if the character is marked as favorite.
-						</li>
-						<li>
-							<strong>description</strong>: Description of the character.
-						</li>
-						<li>
-							<strong>id</strong>: Unique identifier of the character.
-						</li>
-						<li>
-							<strong>isError</strong>: Boolean indicating if there was an error fetching the data.
-						</li>
-						<li>
-							<strong>isLoading</strong>: Boolean indicating if the data is still loading.
-						</li>
-					</ul>
+					<h3>Overview</h3>
+					<p>
+						The <code>CharacterDetail</code> component fetches and displays detailed information
+						about a specific character using internal data fetching logic.
+					</p>
 
 					<h3>Example Usage</h3>
 					<pre>
@@ -89,8 +82,8 @@ const CharacterDetailDocumentation = () => {
 					<h3>Additional Notes</h3>
 					<ul>
 						<li>
-							The <code>CharacterDetail</code> component uses the <code>useFilterData</code> hook to
-							fetch and filter character data.
+							The <code>CharacterDetail</code> component uses the <code>useFilterData</code> hook
+							internally to fetch and filter character data.
 						</li>
 						<li>
 							It also uses the <code>StatusWrapper</code> component to handle loading and error
@@ -126,34 +119,11 @@ const CharacterDetailDocumentation = () => {
 						personaje, incluyendo su resumen y cómics relacionados.
 					</p>
 
-					<h3>Props</h3>
-					<ul>
-						<li>
-							<strong>comics</strong>: Lista de cómics relacionados con el personaje.
-						</li>
-						<li>
-							<strong>name</strong>: Nombre del personaje.
-						</li>
-						<li>
-							<strong>image</strong>: Imagen del personaje.
-						</li>
-						<li>
-							<strong>favorite</strong>: Booleano que indica si el personaje está marcado como
-							favorito.
-						</li>
-						<li>
-							<strong>description</strong>: Descripción del personaje.
-						</li>
-						<li>
-							<strong>id</strong>: Identificador único del personaje.
-						</li>
-						<li>
-							<strong>isError</strong>: Booleano que indica si hubo un error al obtener los datos.
-						</li>
-						<li>
-							<strong>isLoading</strong>: Booleano que indica si los datos aún se están cargando.
-						</li>
-					</ul>
+					<h3>Visión General</h3>
+					<p>
+						El componente <code>CharacterDetail</code> obtiene y muestra información detallada sobre
+						un personaje específico utilizando lógica interna para la obtención de datos.
+					</p>
 
 					<h3>Ejemplo de Uso</h3>
 					<pre>
@@ -167,7 +137,7 @@ const CharacterDetailDocumentation = () => {
 					<ul>
 						<li>
 							El componente <code>CharacterDetail</code> utiliza el hook <code>useFilterData</code>{' '}
-							para obtener y filtrar los datos del personaje.
+							internamente para obtener y filtrar los datos del personaje.
 						</li>
 						<li>
 							También usa el componente <code>StatusWrapper</code> para manejar los estados de carga

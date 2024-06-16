@@ -4,6 +4,7 @@ import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-r
 
 import useLanguages from '../../../hooks/useLanguages/useLanguages';
 import Navbar from './Navbar';
+import { expect, fireEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Navbar> = {
 	title: 'components/layout/Navbar',
@@ -26,7 +27,24 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Navbars: Story = {
-	args: {},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		const logoElement = canvas.getByTestId('svg-logo');
+		expect(logoElement).toBeInTheDocument();
+
+		const favoritesIconElement = canvas.getByTestId('svg-favorites');
+		expect(favoritesIconElement).toBeInTheDocument();
+
+		const buttonFavorites = canvasElement.querySelector('.navbar__favorites');
+		fireEvent.click(buttonFavorites!);
+
+		const totalFavoritesElement = canvas.getByText(0);
+		expect(totalFavoritesElement).toBeInTheDocument();
+
+		const linkLogo = canvas.getByRole('link');
+		fireEvent.click(linkLogo!);
+	},
 };
 
 const NavbarDocumentation = () => {
@@ -50,11 +68,11 @@ const NavbarDocumentation = () => {
 					<ul>
 						<li>
 							<strong>Logo</strong>: A link that redirects to the main page (<code>/</code>). It
-							contains text with the title "Podcasts".
+							contains an SVG logo.
 						</li>
 						<li>
-							<strong>Loader</strong>: A visual indicator that is displayed in the top right corner
-							during navigation transitions. It consists of four animated circles.
+							<strong>Favorites Icon</strong>: An icon that toggles the favorites view and displays
+							the total number of favorites.
 						</li>
 					</ul>
 
@@ -72,12 +90,7 @@ const NavbarDocumentation = () => {
 							This component uses <code>react-router-dom</code> to handle navigation.
 						</li>
 						<li>
-							The loading indicator (<code>Loader</code>) is displayed during navigation transitions
-							and disappears when finished.
-						</li>
-						<li>
-							The component is designed to be used in the main view of the application, providing
-							smooth navigation without reloading the page.
+							The favorites icon toggles the view between all characters and favorite characters.
 						</li>
 					</ul>
 
@@ -89,15 +102,27 @@ const NavbarDocumentation = () => {
 					<ul>
 						<li>
 							<strong>Rendering of the Logo</strong>: It is verified that the logo of the{' '}
-							<code>Navbar</code> is rendered correctly, including its link and text.
+							<code>Navbar</code> is rendered correctly, including its link.
 						</li>
 						<li>
-							<strong>Rendering of the Text of the Logo</strong>: It is checked that the text inside
-							the logo (<code>h2</code>) is displayed correctly with the content "Podcasts".
+							<strong>Rendering of the Favorites Icon</strong>: It is verified that the favorites
+							icon is rendered correctly.
 						</li>
 						<li>
-							<strong>Navigation of the Logo</strong>: The link of the logo correctly redirects to
-							the main page (<code>/</code>).
+							<strong>Click on Favorites Icon</strong>: It is checked that clicking on the favorites
+							icon updates the state and character filter type.
+						</li>
+						<li>
+							<strong>Rendering of the Total Favorites</strong>: It is verified that the total
+							number of favorites is displayed correctly.
+						</li>
+						<li>
+							<strong>Click on Logo</strong>: It is checked that clicking the logo redirects to the
+							main page and updates the state and character filter.
+						</li>
+						<li>
+							<strong>Favorites Icon Toggle</strong>: It is verified that toggling the favorites
+							icon changes between the appropriate icons based on the favorites state.
 						</li>
 					</ul>
 					<p>
@@ -120,12 +145,11 @@ const NavbarDocumentation = () => {
 					<ul>
 						<li>
 							<strong>Logo</strong>: Un enlace que redirige a la página principal (<code>/</code>).
-							Contiene un texto con el título "Podcasts".
+							Contiene un logo SVG.
 						</li>
 						<li>
-							<strong>Loader</strong>: Un indicador visual que se muestra en la esquina superior
-							derecha durante las transiciones de navegación. Está compuesto por cuatro círculos
-							animados.
+							<strong>Icono de Favoritos</strong>: Un icono que alterna la vista de favoritos y
+							muestra el número total de favoritos.
 						</li>
 					</ul>
 
@@ -143,12 +167,8 @@ const NavbarDocumentation = () => {
 							Este componente utiliza <code>react-router-dom</code> para manejar la navegación.
 						</li>
 						<li>
-							El indicador de carga (<code>Loader</code>) se muestra durante las transiciones de
-							navegación y desaparece al finalizar.
-						</li>
-						<li>
-							El componente está diseñado para ser utilizado en la vista principal de la aplicación,
-							proporcionando una navegación fluida sin recargar la página.
+							El icono de favoritos alterna la vista entre todos los personajes y los personajes
+							favoritos.
 						</li>
 					</ul>
 
@@ -160,15 +180,27 @@ const NavbarDocumentation = () => {
 					<ul>
 						<li>
 							<strong>Renderización del Logo</strong>: Se verifica que el logo del{' '}
-							<code>Navbar</code> se renderiza correctamente, incluyendo su enlace y texto.
+							<code>Navbar</code> se renderiza correctamente, incluyendo su enlace.
 						</li>
 						<li>
-							<strong>Renderización del Texto del Logo</strong>: Se comprueba que el texto dentro
-							del logo (<code>h2</code>) se muestra correctamente con el contenido "Podcasts".
+							<strong>Renderización del Icono de Favoritos</strong>: Se verifica que el icono de
+							favoritos se renderiza correctamente.
 						</li>
 						<li>
-							<strong>Navegación del Logo</strong>: El enlace del logo redirige correctamente a la
-							página principal (<code>/</code>).
+							<strong>Click en el Icono de Favoritos</strong>: Se comprueba que al hacer clic en el
+							icono de favoritos se actualiza el estado y el tipo de filtro de personajes.
+						</li>
+						<li>
+							<strong>Renderización del Total de Favoritos</strong>: Se verifica que el número total
+							de favoritos se muestra correctamente.
+						</li>
+						<li>
+							<strong>Click en el Logo</strong>: Se comprueba que al hacer clic en el logo se
+							redirige a la página principal y se actualiza el estado y el filtro de personajes.
+						</li>
+						<li>
+							<strong>Alternar Icono de Favoritos</strong>: Se verifica que al alternar el icono de
+							favoritos, cambia entre los iconos adecuados según el estado de favoritos.
 						</li>
 					</ul>
 					<p>

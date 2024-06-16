@@ -1,14 +1,14 @@
 .detail-resume {
-	max-width            : 960px;
-	margin               : 0 auto;
-	display              : grid;
+	max-width: 960px;
+	margin: 0 auto;
+	display: grid;
 	grid-template-columns: min-content 1fr;
 
 	&__image {
 		max-height: 320px;
-		width     : auto;
+		width: auto;
 
-		>img {
+		> img {
 			height: 100%;
 		}
 	}
@@ -16,14 +16,14 @@
 	&__description {
 		height: 320px;
 
-		>div {
+		> div {
 			padding: 48px;
 		}
 
 		&-title {
-			display        : flex;
+			display: flex;
 			justify-content: space-between;
-			align-items    : center;
+			align-items: center;
 		}
 	}
 
@@ -32,9 +32,9 @@
 
 		&__image {
 			max-width: auto;
-			width    : 100%;
+			width: 100%;
 
-			>img {
+			> img {
 				width: 100%;
 			}
 		}
@@ -42,7 +42,7 @@
 		&__description {
 			height: auto;
 
-			>div {
+			> div {
 				padding: 1rem;
 			}
 		}

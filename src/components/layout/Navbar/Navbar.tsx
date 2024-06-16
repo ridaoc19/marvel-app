@@ -23,7 +23,9 @@ function Navbar() {
 					setFavorite(!favorite);
 				}}
 			>
-				<Svg type={SvgType.Logo} />
+				<div data-testid='svg-logo'>
+					<Svg type={SvgType.Logo} />
+				</div>
 			</Link>
 			<div
 				className='navbar__favorites'
@@ -32,15 +34,18 @@ function Navbar() {
 					setFavorite(!favorite);
 				}}
 			>
-				<Svg
-					type={
-						character.length === characterFilter.data.length || characterFilter.type !== 'favorites'
-							? SvgType.Favorites_white_size
-							: favorite
-								? SvgType.Favorites
-								: SvgType.Favorites_black_size
-					}
-				/>
+				<div data-testid='svg-favorites'>
+					<Svg
+						type={
+							character.length === characterFilter.data.length ||
+							characterFilter.type !== 'favorites'
+								? SvgType.Favorites_white_size
+								: favorite
+									? SvgType.Favorites
+									: SvgType.Favorites_black_size
+						}
+					/>
+				</div>
 				<p>{totalFavorites}</p>
 			</div>
 		</div>

@@ -1,7 +1,10 @@
+import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
-import CharacterList from './CharacterList';
+import { expect } from '@storybook/test';
 import { withRouter } from 'storybook-addon-remix-react-router';
 import Layout from '../../components/layout/Layout';
+import useLanguages from '../../hooks/useLanguages/useLanguages';
+import CharacterList from './CharacterList';
 
 const meta: Meta<typeof CharacterList> = {
 	title: 'views/CharacterList',
@@ -28,12 +31,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Characters: Story = {
-	args: {},
-};
+	play: async ({ canvasElement }) => {
+		const characterListElement = canvasElement.querySelector('.character-list');
+		expect(characterListElement).toBeInTheDocument();
 
-import React from 'react';
-import { Controls, Primary } from '@storybook/blocks';
-import useLanguages from '../../hooks/useLanguages/useLanguages';
+		const filterElement = characterListElement?.querySelector('.filter');
+		expect(filterElement).toBeInTheDocument();
+
+		const errorMessage = characterListElement?.querySelector('.status-wrapper');
+		expect(errorMessage).not.toBeInTheDocument();
+	},
+};
 
 const CharacterListDocumentation = () => {
 	const { Switch, language } = useLanguages();
@@ -50,17 +58,7 @@ const CharacterListDocumentation = () => {
 					</p>
 
 					<h3>Props</h3>
-					<ul>
-						<li>
-							<strong>isError</strong>: Indicates if there is an error in fetching data.
-						</li>
-						<li>
-							<strong>isLoading</strong>: Indicates if the data is currently loading.
-						</li>
-						<li>
-							<strong>characterFilter</strong>: The filtered character data to be displayed.
-						</li>
-					</ul>
+					<p>This component does not receive any props.</p>
 
 					<h3>Example Usage</h3>
 					<pre>
@@ -98,6 +96,10 @@ const CharacterListDocumentation = () => {
 							<strong>Error Handling</strong>: Checks that errors are handled and displayed
 							properly.
 						</li>
+						<li>
+							<strong>Loading State</strong>: Verifies that the loading state is displayed correctly
+							while data is being fetched.
+						</li>
 					</ul>
 				</div>
 			) : (
@@ -109,17 +111,7 @@ const CharacterListDocumentation = () => {
 					</p>
 
 					<h3>Props</h3>
-					<ul>
-						<li>
-							<strong>isError</strong>: Indica si hay un error al obtener los datos.
-						</li>
-						<li>
-							<strong>isLoading</strong>: Indica si los datos se están cargando actualmente.
-						</li>
-						<li>
-							<strong>characterFilter</strong>: Los datos filtrados de los personajes a mostrar.
-						</li>
-					</ul>
+					<p>Este componente no recibe ninguna prop.</p>
 
 					<h3>Ejemplo de Uso</h3>
 					<pre>
@@ -157,6 +149,10 @@ const CharacterListDocumentation = () => {
 						<li>
 							<strong>Manejo de Errores</strong>: Comprueba que los errores se manejan y muestran
 							correctamente.
+						</li>
+						<li>
+							<strong>Estado de Carga</strong>: Verifica que el estado de carga se muestra
+							correctamente mientras se obtienen los datos.
 						</li>
 					</ul>
 				</div>
