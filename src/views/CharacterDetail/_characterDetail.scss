@@ -10,6 +10,18 @@
 	&__resume {
 		width: 100%;
 		background-color: var(--marvel-black);
+		position: relative;
+
+		&-cut {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 24px 24px 0 0;
+			border-color: transparent var(--marvel-white) transparent transparent;
+		}
 	}
 
 	&__comics {
