@@ -27,8 +27,9 @@ function Navbar() {
 					<Svg type={SvgType.Logo} />
 				</div>
 			</Link>
-			<div
+			<Link
 				className='navbar__favorites'
+				to={'/'}
 				onClick={() => {
 					charactersFilter({ type: 'favorites', search: !favorite });
 					setFavorite(!favorite);
@@ -47,7 +48,7 @@ function Navbar() {
 					/>
 				</div>
 				<p>{totalFavorites}</p>
-			</div>
+			</Link>
 		</div>
 	);
 }
