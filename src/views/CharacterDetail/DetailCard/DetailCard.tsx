@@ -6,7 +6,7 @@ function DetailCard({ image, title, modified }: Omit<Comic, 'id'>) {
 			</div>
 			<div className='detail-card__info'>
 				<h4>{title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()}</h4>
-				<p>{new Date(modified).getFullYear()}</p>
+				<p>{modified || ""}</p>
 			</div>
 		</div>
 	);

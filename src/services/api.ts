@@ -68,7 +68,9 @@ export const getCharacterComics = async (characterId: string): Promise<ComicDeta
 	const {
 		data: { results },
 	}: ApiComic.Comic = await fetchFromMarvel(`/characters/${characterId}/comics?`);
+	console.log(results)
 	const findCharacter = characters.find(character => character.id === Number(characterId));
+	
 	if (!findCharacter) throw new Error(`Error character`);
 	const filterComics: ComicDetail = {
 		id: findCharacter.id,
@@ -76,14 +78,18 @@ export const getCharacterComics = async (characterId: string): Promise<ComicDeta
 		description: findCharacter.description,
 		image: findCharacter.image,
 		favorite: findCharacter.favorite,
-		comics: results.map(({ id, title, modified, thumbnail: { extension, path } }) => {
-			return {
-				id,
-				title,
-				modified,
-				image: `${path}.${extension}`,
-			};
-		}),
+		comics:
+			results
+				.map(({ id, title, modified, thumbnail: { extension, path } }) => {
+					return {
+						id,
+						title,
+						modified: new Date(modified).getFullYear(),
+						image: `${path}.${extension}`,
+					};
+				})
+				.sort((a, b) => b.modified - a.modified)
+				.slice(0, 20) ?? [],
 	};
 
 	setCachedDataMarvel(`comics-${characterId}`, filterComics);

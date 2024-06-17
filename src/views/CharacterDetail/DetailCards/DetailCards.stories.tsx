@@ -8,25 +8,25 @@ const comics = [
 	{
 		id: 47176,
 		title: 'FREE COMIC BOOK DAY 2013 1 (2013) #1',
-		modified: '2019-06-25T17:31:51-0400',
+		modified: 2019,
 		image: 'http://i.annihil.us/u/prod/marvel/i/mg/9/50/57ed5bc9040e3.jpg',
 	},
 	{
 		id: 40628,
 		title: 'Hulk (2008) #55',
-		modified: '2012-06-19T11:48:47-0400',
+		modified: 2012,
 		image: 'http://i.annihil.us/u/prod/marvel/i/mg/6/60/5ba3d0869c543.jpg',
 	},
 	{
 		id: 40630,
 		title: 'Hulk (2008) #54',
-		modified: '2012-06-11T17:31:00-0400',
+		modified: 2012,
 		image: 'http://i.annihil.us/u/prod/marvel/i/mg/f/00/5ba3c7cd5f1e2.jpg',
 	},
 	{
 		id: 40632,
 		title: 'Hulk (2008) #53',
-		modified: '2012-06-12T15:18:39-0400',
+		modified: 2012,
 		image: 'http://i.annihil.us/u/prod/marvel/i/mg/2/00/5ba3bfcc55f5a.jpg',
 	},
 ];
