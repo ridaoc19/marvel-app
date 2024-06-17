@@ -42,8 +42,8 @@ export const Navbars: Story = {
 		const totalFavoritesElement = canvas.getByText(0);
 		expect(totalFavoritesElement).toBeInTheDocument();
 
-		const linkLogo = canvas.getByRole('link');
-		fireEvent.click(linkLogo!);
+		const linkLogo = canvas.getAllByRole('link');
+		fireEvent.click(linkLogo[0]);
 	},
 };
 
