@@ -1,7 +1,7 @@
 interface Comic {
 	id: number;
 	title: string;
-	modified: string;
+	modified: number;
 	image: string;
 }
 

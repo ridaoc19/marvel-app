@@ -7,7 +7,7 @@ import { expect, within } from '@storybook/test';
 const comic = {
 	id: 47176,
 	title: 'FREE COMIC BOOK DAY 2013 1 (2013) #1',
-	modified: '2019-06-25T17:31:51-0400',
+	modified: 2019,
 	image: 'http://i.annihil.us/u/prod/marvel/i/mg/9/50/57ed5bc9040e3.jpg',
 };
 

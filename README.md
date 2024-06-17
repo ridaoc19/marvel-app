@@ -102,6 +102,16 @@ cd marvel-app
 npm install
 ```
 
+### Variables de Entorno
+
+Para que la aplicación funcione correctamente, necesitas configurar las siguientes variables de entorno en un archivo .env en la raíz del proyecto:
+
+```bash
+REACT_APP_API_KEY=XXXXXX
+REACT_APP_HASH=XXXXXX
+REACT_APP_TS=XXXX
+```
+
 ### Modo Development
 
 ```bash
