@@ -103,6 +103,7 @@ npm install
 ```
 
 ### Variables de Entorno
+
 Para que la aplicación funcione correctamente, necesitas configurar las siguientes variables de entorno en un archivo .env en la raíz del proyecto:
 
 ```bash

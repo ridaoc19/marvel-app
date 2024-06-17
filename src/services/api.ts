@@ -68,9 +68,9 @@ export const getCharacterComics = async (characterId: string): Promise<ComicDeta
 	const {
 		data: { results },
 	}: ApiComic.Comic = await fetchFromMarvel(`/characters/${characterId}/comics?`);
-	console.log(results)
+	console.log(results);
 	const findCharacter = characters.find(character => character.id === Number(characterId));
-	
+
 	if (!findCharacter) throw new Error(`Error character`);
 	const filterComics: ComicDetail = {
 		id: findCharacter.id,
