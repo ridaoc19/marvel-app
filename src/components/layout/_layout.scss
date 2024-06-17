@@ -6,6 +6,10 @@
 	display: grid;
 	grid-template-rows: min-content min-content 1fr;
 
+	&.loading {
+		grid-template-rows: min-content 1fr;
+	}
+
 	&__navbar {
 		@media (max-width: 550px) {
 			position: fixed;

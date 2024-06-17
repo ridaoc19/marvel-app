@@ -9,10 +9,11 @@ function Layout({ children }: { children: ReactNode }) {
 	const {
 		marvelState: {
 			characterFilter: { type },
+			isLoading,
 		},
 	} = useContext(CreateContext);
 	return (
-		<div className={`layout ${type === 'favorites' ? 'favorites' : ''}`} data-testid='layout'>
+		<div className={`layout ${isLoading ? 'loading' : ''}`} data-testid='layout'>
 			<div className='layout__navbar'>
 				<Navbar />
 			</div>
