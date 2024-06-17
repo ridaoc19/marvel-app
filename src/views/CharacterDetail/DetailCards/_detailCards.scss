@@ -21,6 +21,9 @@
 
 		&::-webkit-scrollbar {
 			height: 4px;
+			@media (max-width: 550px) {
+				display: none;
+			}
 		}
 
 		&::-webkit-scrollbar-thumb {

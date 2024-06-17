@@ -12,13 +12,13 @@ function Filter() {
 	const [filter, setFilter] = useState('');
 
 	useEffect(() => {
-		if (character.length === characterFilter.data.length) {
+		if (character.length === characterFilter.data.length || characterFilter.type === 'favorites') {
 			setFilter('');
 			if (inputRef.current) {
 				inputRef.current.value = '';
 			}
 		}
-	}, [character.length, characterFilter.data.length]);
+	}, [character.length, characterFilter.data.length, characterFilter.type]);
 
 	return (
 		<div className='filter'>

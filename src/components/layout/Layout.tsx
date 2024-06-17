@@ -16,11 +16,9 @@ function Layout({ children }: { children: ReactNode }) {
 			<div className='layout__navbar'>
 				<Navbar />
 			</div>
-			{type === 'favorites' && pathname === '/' && (
-				<div className='layout__favorites'>
-					<h2>FAVORITES</h2>
-				</div>
-			)}
+			<div className='layout__favorites'>
+				{type === 'favorites' && pathname === '/' && <h2>FAVORITES</h2>}
+			</div>
 			{children && (
 				<div className='layout__children' data-testid='layout-children'>
 					{children}
