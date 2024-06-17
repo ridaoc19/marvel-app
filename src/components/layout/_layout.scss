@@ -7,15 +7,17 @@
 	grid-template-rows: min-content min-content 1fr;
 
 	&.loading {
-		grid-template-rows: min-content 1fr;
+		@media (max-width: 550px) {
+			grid-template-rows: min-content 1fr;
+		}
 	}
 
 	&__navbar {
+		width: 100%;
 		@media (max-width: 550px) {
 			position: fixed;
 			top: 0;
 			left: 0;
-			width: 100%;
 			z-index: 1000;
 		}
 	}
